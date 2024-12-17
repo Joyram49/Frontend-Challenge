@@ -1,4 +1,6 @@
-import DataTableWithPrime from "./components/DataTable";
+import { Suspense, lazy } from "react";
+
+const DataTableWithPrime = lazy(() => import("./components/DataTable"));
 
 const App: React.FC = () => {
   return (
@@ -7,8 +9,9 @@ const App: React.FC = () => {
         <h1 className='text-center text-3xl font-medium'>
           Artwork Table With Prime React
         </h1>
-
-        <DataTableWithPrime />
+        <Suspense fallback={<p>loading....</p>}>
+          <DataTableWithPrime />
+        </Suspense>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import { Button } from "primereact/button";
-import { Checkbox } from "primereact/checkbox";
+import { Checkbox, CheckboxChangeEvent } from "primereact/checkbox";
 import { Column } from "primereact/column";
 import { DataTable } from "primereact/datatable";
 import { InputNumber } from "primereact/inputnumber";
@@ -78,7 +78,7 @@ const DataTableWithPrime: React.FC = () => {
     }
   };
 
-  const onSelectAllChange = (event: { checked: boolean }) => {
+  const onSelectAllChange = (event: CheckboxChangeEvent) => {
     const selectAll = event.checked;
 
     if (selectAll) {
@@ -111,7 +111,10 @@ const DataTableWithPrime: React.FC = () => {
     }
   };
 
-  const onRowCheckboxChange = (rowData: Product, checked: boolean) => {
+  const onRowCheckboxChange = (
+    rowData: Product,
+    checked: boolean | undefined
+  ) => {
     const updatedSelection = checked
       ? [...selectedProducts, rowData]
       : selectedProducts.filter((item) => item.id !== rowData.id);
@@ -144,7 +147,7 @@ const DataTableWithPrime: React.FC = () => {
             >
               <InputNumber
                 value={customSelectionLength}
-                onValueChange={(e) => setCustomSelectionLength(e.value)}
+                onValueChange={(e) => setCustomSelectionLength(e.value ?? 0)}
                 min={0}
                 max={totalProducts}
               />
@@ -171,6 +174,7 @@ const DataTableWithPrime: React.FC = () => {
     <div className='text-lg my-10'>
       <DataTable
         value={products}
+        selectionMode='multiple'
         size='large'
         showGridlines
         lazy
