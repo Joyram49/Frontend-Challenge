@@ -43,12 +43,12 @@ This repository contains various projects that are primarily focused on **coding
   - **Description**: A customizable and feature-rich data table component built with PrimeReact, offering efficient lazy loading, pagination, and custom row selection capabilities.
 
 - **Key Features**:
-  -Lazy loading with efficient data fetching
-  -Custom row selection with checkbox support
-  -Overlay panel for custom selection length input -**Focus Areas**:
-  -React State Management (useState, useEffect)
-  -PrimeReact Components (DataTable, Paginator, Checkbox, OverlayPanel)
-  -Performance Optimization (lazy loading, pagination)
+  - Lazy loading with efficient data fetching
+  - Custom row selection with checkbox support
+  - Overlay panel for custom selection length input -**Focus Areas**:
+  - React State Management (useState, useEffect)
+  - PrimeReact Components (DataTable, Paginator, Checkbox, OverlayPanel)
+  - Performance Optimization (lazy loading, pagination)
 
 ## Why These Projects?
 
